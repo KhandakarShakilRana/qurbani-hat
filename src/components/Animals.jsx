@@ -7,11 +7,12 @@ const Animals = async () => {
 
   return (
     <div className="bg-[#F1F2ED]">
+      <div className="bg-[#F1F2ED] w-300 mx-auto">
       <h1 className="text-[#213D34] text-center font-bold mt-10 text-4xl ">
         Featured Animals
       </h1>
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 py-20">
-        {animals.map((animal) => (
+        {animals.slice(0, 4).map((animal) => (
           <div key={animal.id} className="text-[#213D34]">
             <div className=" mx-auto p-4 rounded-2xl bg-white shadow-xl ">
               <img
@@ -38,6 +39,7 @@ const Animals = async () => {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 };

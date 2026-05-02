@@ -1,9 +1,13 @@
+"use client"
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
 
 const Navbar = () => {
+  const pathname = usePathname()
   return (
-    <div>
+    <div className="bg-[#F1F2ED]">
+      <div className="w-300 mx-auto">
       <div className="navbar bg-[#F1F2ED]">
         <div className="navbar-start">
           <div className="dropdown">
@@ -36,8 +40,12 @@ const Navbar = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 gap-6 text-[#213D34] font-semibold">
-            <Link href={"/"} >Home</Link>
-            <Link href={"/animals"}>Animals</Link>
+            <Link href={"/"} className={`px-3 py-1 rounded ${
+          pathname === "/" ? "bg-[#213D34] text-white" : ""
+        }`}>Home</Link>
+            <Link href={"/animals"} className={`px-3 py-1 rounded ${
+          pathname === "/animals" ? "bg-[#213D34] text-white" : ""
+        }`}>Animals</Link>
             
           </ul>
         </div>
@@ -46,6 +54,7 @@ const Navbar = () => {
           <Link href={"/register"}><button className="btn bg-[#213D34]">Register</button></Link>
         </div>
       </div>
+    </div>
     </div>
   );
 };
