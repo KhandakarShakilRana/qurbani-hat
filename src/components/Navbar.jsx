@@ -7,7 +7,7 @@ const Navbar = () => {
   const pathname = usePathname()
   return (
     <div className="bg-[#F1F2ED]">
-      <div className="w-300 mx-auto">
+      <div className="-max-w-300 mx-auto">
       <div className="navbar bg-[#F1F2ED]">
         <div className="navbar-start">
           <div className="dropdown">

@@ -7,7 +7,7 @@ const Animals = async () => {
 
   return (
     <div className="bg-[#F1F2ED]">
-      <div className="bg-[#F1F2ED] w-300 mx-auto">
+      <div className="bg-[#F1F2ED] max-w-300 mx-auto">
       <h1 className="text-[#213D34] text-center font-bold mt-10 text-4xl ">
         Featured Animals
       </h1>

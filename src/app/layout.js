@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AnimalProvider from "@/context/AnimalContext";
+import { Toaster } from "react-hot-toast";
 
 
 const geistSans = Geist({
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
         <AnimalProvider>
           <Navbar></Navbar>
         {children}
+        <Toaster />
         <Footer></Footer>
         </AnimalProvider>
         </body>
