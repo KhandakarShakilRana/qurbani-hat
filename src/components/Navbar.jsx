@@ -1,10 +1,18 @@
 "use client"
+
+import { authClient, useSession } from "@/lib/auth-client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+
 import React from "react";
 
 const Navbar = () => {
-  const pathname = usePathname()
+
+  const pathname = usePathname();
+  const {data , isPending} = useSession()
+  const user = data?.user
+  
+
   return (
     <div className="bg-[#F1F2ED]">
       <div className="-max-w-300 mx-auto">
@@ -49,9 +57,22 @@ const Navbar = () => {
             
           </ul>
         </div>
+        
         <div className="navbar-end gap-4">
-          <Link href={"/login"}><button className="btn">Login</button></Link>
-          <Link href={"/register"}><button className="btn bg-[#213D34]">Register</button></Link>
+          {
+            user ? <>
+            <div className="text-black">avatar</div>
+            <button onClick={async ()=>{
+  await authClient.signOut();
+  window.location.reload();
+}
+               
+             }  className="btn">Login Out</button>
+
+            </> : <><Link href={"/login"}><button className="btn">Login</button></Link>
+          <Link href={"/register"}><button className="btn bg-[#213D34]">Register</button></Link></>
+          }
+          
         </div>
       </div>
     </div>
