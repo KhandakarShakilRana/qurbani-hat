@@ -18,7 +18,7 @@ export default function Basic() {
     const { data, error } = await authClient.signIn.email({
     email: userData.email , 
     password: userData.password, 
-    callbackURL : "http://localhost:3000"
+    callbackURL : process.env.BETTER_AUTH_URL
 });
 if (error) {
   toast.error(error.message || "SignIn failed");
