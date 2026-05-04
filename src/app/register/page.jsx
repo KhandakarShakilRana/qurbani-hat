@@ -18,7 +18,8 @@ export default function Basic() {
     const { data, error } = await authClient.signUp.email({
     name: userData.name,
     email: userData.email , 
-    password: userData.password, 
+    password: userData.password,
+    image : userData.avatar, 
     callbackURL : "http://localhost:3000"
 });
 if (error) {
@@ -58,6 +59,15 @@ router.push("/login");
         <Input placeholder="john@example.com" className="bg-gray-200" />
         <FieldError />
       </TextField>
+<TextField
+        isRequired
+        name="avatar"
+        type="text"
+      >
+        <Label>Avatar</Label>
+        <Input placeholder="please paste your avater link" className="bg-gray-200" />
+        <FieldError />
+      </TextField>
 
       <TextField
         isRequired
@@ -83,9 +93,10 @@ router.push("/login");
         <Description>Must be at least 8 characters with 1 uppercase and 1 number</Description>
         <FieldError />
       </TextField>
+      
 
       <div className="flex gap-2">
-        <Button type="submit">
+        <Button className="bg-[#213D34]" type="submit">
           <Check />
           Submit
         </Button>

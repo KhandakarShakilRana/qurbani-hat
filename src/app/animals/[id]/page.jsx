@@ -16,13 +16,13 @@ const AnimalDetailPage = () => {
 
   return (
     <div className="bg-[#F1F2ED] text-[#213D34]">
-      <div className="max-w-300 mx-auto">
+      <div className="max-w-300 mx-auto p-4">
         <div className="flex flex-col md:flex-row">
           <div className="flex-1">
             <img
               src={`${animal.image}`}
               alt=""
-              className="rounded-2xl my-4 max-w-120 mx-auto"
+              className="rounded-2xl my-4 md:max-w-120 mx-auto"
             />
           </div>
           <div className="flex-1 my-4 pl-4">

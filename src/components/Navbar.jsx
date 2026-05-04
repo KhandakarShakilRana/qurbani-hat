@@ -44,7 +44,7 @@ const Navbar = () => {
             <Link href={"/animals"} className="ml-4">Animals</Link>
             </ul>
           </div>
-          <a className="text-2xl font-bold text-[#213D34]">QurbaniHat</a>
+          <a href={"/"} className="text-xl md:text-2xl font-bold text-[#213D34]">QurbaniHat</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 gap-6 text-[#213D34] font-semibold">
@@ -59,17 +59,17 @@ const Navbar = () => {
         </div>
         
         <div className="navbar-end gap-4">
-          {
+          { isPending ? <><span className="loading loading-spinner bg-[#213D34] loading-sm bg-"></span></> :
             user ? <>
-            <div className="text-black">avatar</div>
+            <div className="text-black"><img src={`${user.image}`} alt="user avatar" className="w-9 rounded-full" /></div>
             <button onClick={async ()=>{
   await authClient.signOut();
   window.location.reload();
 }
                
-             }  className="btn">Login Out</button>
+             }  className="btn bg-[#213D34] border-none">Login Out</button>
 
-            </> : <><Link href={"/login"}><button className="btn">Login</button></Link>
+            </> : <><Link href={"/login"}><button className="btn bg-[#213D34]">Login</button></Link>
           <Link href={"/register"}><button className="btn bg-[#213D34]">Register</button></Link></>
           }
           

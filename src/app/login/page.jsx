@@ -75,7 +75,7 @@ router.push("/");
       </TextField>
 
       <div className="flex gap-2">
-        <Button type="submit">
+        <Button className="bg-[#213D34]" type="submit">
           <Check />
           Submit
         </Button>
