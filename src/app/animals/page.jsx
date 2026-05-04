@@ -1,9 +1,8 @@
 import Link from "next/link";
+import animals from "@/data/animals.json";
 
-
-const AnimalPage = async () => {
-  const res = await fetch("@/public/animals.json");
-  const animals = await res.json();
+const AnimalPage = () => {
+  
 
   return (
     <div className="bg-[#F1F2ED]">
