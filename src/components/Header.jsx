@@ -1,9 +1,9 @@
-import AnimalContext from "@/context/AnimalContext";
+
 import React from "react";
 
 const Header = () => {
   return <div>
-    <AnimalContext></AnimalContext>
+    
     <div
   className="hero min-h-screen"
   style={{

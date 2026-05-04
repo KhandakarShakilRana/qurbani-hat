@@ -1,9 +1,8 @@
 "use client";
 import animals from "@/data/animals.json";
 import BookingForm from "@/components/BookingForm";
-import AnimalProvider, { AnimalContext } from "@/context/AnimalContext";
 import { useParams } from "next/navigation";
-import React, { use, useContext } from "react";
+import React, { use } from "react";
 
 const AnimalDetailPage = () => {
   const { id } = useParams();
