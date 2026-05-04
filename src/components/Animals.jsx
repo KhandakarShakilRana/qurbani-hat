@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 
 const Animals = async () => {
-  const res = await fetch(`${process.env.BETTER_AUTH_URL}/animals.json`);
+  const res = await fetch("@/public/animals.json");
   const animals = await res.json();
 
   return (
