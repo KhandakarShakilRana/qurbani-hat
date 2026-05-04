@@ -36,7 +36,7 @@ const BookingForm = () => {
       <Toaster />
 
       <form onSubmit={handleSubmit}>
-        <fieldset className="fieldset text-[#213D34] border-base-300 rounded-box md:w-xl border p-4">
+        <fieldset className="fieldset text-[#213D34] border-base-300 rounded-box border p-4">
           <legend className="fieldset-legend text-[#213D34]">Booking Form</legend>
 
           <label className="label">Name</label>
